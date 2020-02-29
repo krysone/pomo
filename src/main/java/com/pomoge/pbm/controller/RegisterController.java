@@ -26,7 +26,7 @@ public class RegisterController {
 
     @PostMapping
     public String register(@ModelAttribute UserDto registerForm){
-        registerService.mapDto2Entity(registerForm);
+        registerService.create(registerForm);
         log.info(registerForm.getEmail() + " has been added");
         return "redirect:/home";
     }
