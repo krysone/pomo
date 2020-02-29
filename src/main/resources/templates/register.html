@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{pbm.AppName}"></title>
+</head>
+<body>
+<a th:href="@{/home}" th:text="home">Home</a>
+
+<form th:action="@{/register}" method="post" th:object="${registerForm}">
+    <label for="firstName" th:text="#{pbm.firstName}"></label>
+    <input id="firstName" type="text" th:field="*{firstName}" autocomplete="off">
+    <label for="surname" th:text="#{pbm.surname}"></label>
+    <input id="surname" type="text" th:field="*{surname}" autocomplete="off">
+    <label for="email" th:text="#{pbm.email}"></label>
+    <input id="email" type="text" th:field="*{email}" autocomplete="off">
+    <label for="password" th:text="#{pbm.password}"></label>
+    <input id="password" type="password" th:field="*{password}">
+    <input type="submit" th:value="#{pbm.register}">
+</form>
+
+</body>
+</html>
