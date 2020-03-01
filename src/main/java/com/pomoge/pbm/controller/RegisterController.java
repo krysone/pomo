@@ -18,6 +18,7 @@ public class RegisterController {
 
     private final RegisterService registerService;
 
+
     @GetMapping
     public String register(Model model) {
         model.addAttribute("registerForm", new UserDto());
@@ -26,6 +27,7 @@ public class RegisterController {
 
     @PostMapping
     public String register(@ModelAttribute UserDto registerForm){
+
         registerService.create(registerForm);
         log.info(registerForm.getEmail() + " has been added");
         return "redirect:/home";
